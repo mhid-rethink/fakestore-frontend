@@ -1,5 +1,47 @@
-.container {
+.header {
   background: #c1dcdc;
+  padding: 0px 96px;
   display: flex;
-  
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  font-family: "Abhaya Libre", serif;
+  font-size: 24px;
+  padding-right: clamp(5px, 107px, 107px);
+}
+
+ul {
+  display: flex;
+  gap: 48px;
+  flex: 1;
+  padding-right: min(5px);
+}
+li {
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.active {
+  color: #1e1e1e;
+}
+
+.navButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+
+.navButton {
+  text-decoration: none;
+  font-size: 24px;
+  color: #1e1e1e;
 }

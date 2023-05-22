@@ -1,27 +1,38 @@
 import "./style.css";
 
-import { Link } from "react-router-dom";
+import { BsCart, BsPerson } from "react-icons/bs";
+import { BiMenuAltRight } from "react-icons/bi";
+
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <header className="container">
-        <div>logo</div>
+      <header className="header">
+        <div className="logo">GREENMIND</div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <NavLink to="/products">Products</NavLink>
           </li>
           <li>
-            <Link to="/contacts">Contacts</Link>
+            <NavLink to="/contacts">Contacts</NavLink>
           </li>
         </ul>
 
-        <div>carrinho</div>
-        <div>login</div>
-        <div>risco</div>
-        <div>menu</div>
+        <div className="navButtons">
+          <a href="" target="_self" className="navButton">
+            <BsCart />
+          </a>
+          <a href="" target="_self" className="navButton">
+            <BsPerson />
+          </a>
+          <div>|</div>
+          <a href="" target="_self" className="navButton">
+            <BiMenuAltRight />
+          </a>
+        </div>
       </header>
     </>
   );
