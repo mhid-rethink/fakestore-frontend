@@ -21,7 +21,7 @@ const Header = () => {
           </li>
         </ul>
 
-        <div className="navButtons">
+        <div className="navButtonsContainer">
           <a href="" target="_self" className="navButton">
             <BsCart />
           </a>
