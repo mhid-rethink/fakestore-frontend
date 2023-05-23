@@ -9,7 +9,8 @@ const Footer = () => {
     <>
       <footer className="footer">
         <div className="leftFooter">
-          <h2 className="logoFooter">GREENMIND</h2>
+          {/* <h2 className="logoFooter">GREENMIND</h2> */}
+          <img src="logo.svg" alt="logomarca" className="logoFooter"/>
           <p>
             We help you find <br /> your dream plant
           </p>

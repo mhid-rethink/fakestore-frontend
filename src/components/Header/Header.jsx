@@ -2,13 +2,14 @@ import "./style.css";
 
 import { BsCart, BsPerson } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
+import { RxDividerVertical } from "react-icons/rx";
 
 import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <>
       <header className="header">
-        <div className="logo">GREENMIND</div>
+        <img src="logo.svg" alt="logomarca" />
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>
@@ -28,7 +29,9 @@ const Header = () => {
           <a href="" target="_self" className="navButton">
             <BsPerson />
           </a>
-          <div>|</div>
+          <div>
+            <RxDividerVertical className="navButton" />
+          </div>
           <a href="" target="_self" className="navButton">
             <BiMenuAltRight />
           </a>

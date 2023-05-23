@@ -4,15 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 4%;
   height: 120px;
   font-family: "Poppins", sans-serif;
 }
 
-.logo {
-  font-family: "Abhaya Libre", serif;
-  font-size: 24px;
-  padding-right: 4%;
-  color: #1e1e1e;
+.header img {
+  width: 131px;
+  height: 28px;
 }
 
 ul {
