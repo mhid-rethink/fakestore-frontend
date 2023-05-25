@@ -1,0 +1,113 @@
+.bestSelling {
+  height: 532px;
+  display: flex;
+  padding: 4% 6%;
+  justify-content: center;
+  gap: 4%;
+}
+.bestSellingText {
+  width: 196px;
+}
+.bestSellingTitle {
+  width: 196px;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+}
+.bestSellingSubtitle {
+  width: 196px;
+  margin-bottom: 24px;
+
+  font-weight: 500;
+  text-align: left;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.bestSellingSeeMore {
+  background: #c1dcdc;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e1e1e;
+
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+
+.aboutUs {
+  height: 513px;
+  background: #c1dcdc;
+  text-align: center;
+  padding: 0 6%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+.aboutUsText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.aboutUsText h2 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #1e1e1e;
+}
+.aboutUsText p {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(30, 30, 30, 0.5);
+}
+.aboutUsIconContainer {
+  display: flex;
+  gap: 24px;
+}
+.aboutUsColumn {
+  width: 400px;
+  height: 213px;
+}
+
+.categories {
+  height: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.categoriesText h2 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #1e1e1e;
+  margin-bottom: 12px;
+}
+.categoriesText p {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(30, 30, 30, 0.5);
+}
+.categoriesCardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+}
+.categoriesCard {
+  height: 617px;
+  gap: 12px;
+}
+.categoriesCardImg {
+  width: 352px;
+  height: 512px;
+  border-radius: 12px;
+}
+
+.exploreLink {
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  color: #1e1e1e;
+}

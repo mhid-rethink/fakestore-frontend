@@ -1,10 +1,10 @@
-import "./style.css";
+import "./styles.css";
 
 import { BsCart, BsPerson } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxDividerVertical } from "react-icons/rx";
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <>

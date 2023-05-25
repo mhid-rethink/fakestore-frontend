@@ -1,6 +1,6 @@
-import React from "react";
-import "./products.css";
+import "./styles.css";
 const Products = () => {
+
   return (
     <>
       <main className="productsList">Products</main>

@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cardImg {
+  border-radius: 12px;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 18px;
+  color: #1e1e1e;
+  /* margin: 12px 0 7px 0; */
+}
+
+.cardDescription {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(30, 30, 30, 0.5);
+}

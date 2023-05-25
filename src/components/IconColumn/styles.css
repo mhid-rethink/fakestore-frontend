@@ -1,0 +1,17 @@
+.columnContainer svg {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.columnContainer h3 {
+  font-weight: 700;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+.columnContainer p {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(30, 30, 30, 0.5);
+  box-sizing: border-box;
+}
