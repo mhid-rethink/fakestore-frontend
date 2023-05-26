@@ -3,13 +3,14 @@ import "./styles.css";
 import { BsCart, BsPerson } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxDividerVertical } from "react-icons/rx";
+import logo from "../../assets/logo.svg";
 
 import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <>
       <header className="header">
-        <img src="logo.svg" alt="logomarca" />
+        <img src={logo} alt="logomarca" />
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>

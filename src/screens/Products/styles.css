@@ -1,3 +1,89 @@
+.searchArea {
+  width: 100%;
+  padding: 55px 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchContainer {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.searchBar {
+  appearance: none;
+  padding: 18px;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+
+  outline: 0;
+  border: 1px solid #c1dcdc;
+  border-radius: 12px;
+
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(30, 30, 30, 0.5);
+  width: 100%;
+}
+
+.labelForSearchBar {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+  margin-left: -12%;
+
+  background: #c1dcdc;
+  border: none;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchBar::placeholder {
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.searchBySelect {
+  position: relative;
+
+  &:after {
+    content: "\25BC";
+    position: absolute;
+    top: 10%;
+    right: 2%;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #c1dcdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+}
+
 .productsList {
-  height: 1310px ;
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  padding: 4% 5%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10%;
+}
+.productsCard {
+  width: 300px;
+  height: 436px;
+}
+
+.productsCard {
+  margin-bottom: 45px;
+}
+.productsCardImg {
+  width: 300px;
+  height: 363px;
+  object-fit: contain;
 }

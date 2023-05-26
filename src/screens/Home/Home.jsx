@@ -42,7 +42,7 @@ const Home = () => {
           <h2>About Us </h2>
           <p>Order now and appreciate the beauty of nature</p>
         </div>
-        <div className="aboutUsIconContainer">
+        <div className="aboutUsColumnContainer">
           <IconColumn
             columnClass="aboutUsColumn"
             icon={<RiPlantLine />}

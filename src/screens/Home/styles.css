@@ -2,11 +2,12 @@
   height: 532px;
   display: flex;
   padding: 4% 6%;
-  justify-content: center;
+  justify-content: space-between;
   gap: 4%;
 }
 .bestSellingText {
   width: 196px;
+  flex: 1;
 }
 .bestSellingTitle {
   width: 196px;
@@ -61,8 +62,11 @@
   font-size: 18px;
   color: rgba(30, 30, 30, 0.5);
 }
-.aboutUsIconContainer {
+.aboutUsColumnContainer {
+  width: 100%;
+  padding: 0 6%;
   display: flex;
+  justify-content: space-between;
   gap: 24px;
 }
 .aboutUsColumn {
@@ -91,16 +95,18 @@
   color: rgba(30, 30, 30, 0.5);
 }
 .categoriesCardsContainer {
+  width: 100%;
+  padding: 0 6%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 6%;
 }
 .categoriesCard {
-  height: 617px;
+  width: 352px !important;
+  height: 617px !important;
   gap: 12px;
 }
 .categoriesCardImg {
-  width: 352px;
   height: 512px;
   border-radius: 12px;
 }
