@@ -7,8 +7,10 @@
 
 .searchContainer {
   width: 30%;
+  height: 64px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .searchBar {
   appearance: none;
@@ -25,13 +27,20 @@
   font-size: 18px;
   color: rgba(30, 30, 30, 0.5);
   width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .labelForSearchBar {
   width: 48px;
   height: 48px;
   font-size: 18px;
-  margin-left: -12%;
+
+  position: absolute;
+  top: 8px;
+  right: 2%;
 
   background: #c1dcdc;
   border: none;

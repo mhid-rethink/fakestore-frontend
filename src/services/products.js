@@ -5,11 +5,22 @@ export async function getProducts() {
   return response.data;
 }
 
+export async function getProductById(id) {
+  const response = await api.get(`products/${id}`);
+  return response.data;
+}
+
+export async function getProductByName(name) {
+  const response = await api.get(`products/${name}`);
+  return response.data;
+}
+
 export async function getCategories() {
   const response = await api.get("products/categories");
   return response.data;
 }
 
-export async function getProductsByCategory() {
-  const response = await api.get("product/category")
+export async function getProductsByCategory(category) {
+  const response = await api.get(`products/category/${category}`);
+  return response.data;
 }
