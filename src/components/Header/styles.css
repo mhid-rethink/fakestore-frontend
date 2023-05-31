@@ -1,13 +1,14 @@
 .header {
   background: #c1dcdc;
   width: 100%;
-  padding: 0 6.3%;
+  padding: 2% 6.3%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 4%;
-  height: 120px;
+  height: clamp(fit-content, 120px, 120px);
   font-family: "Poppins", sans-serif;
+  flex-wrap: wrap;
 }
 
 .header img {

@@ -1,14 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles.css";
+
 import {
   getCategories,
   getProducts,
   getProductsByCategory,
   getProductByName,
 } from "../../services/products";
+
 import Card from "../../components/Card/Card";
 import { BsSearch } from "react-icons/bs";
+
+import "./styles.css";
 
 const Products = () => {
   const [products, setProducts] = useState();
@@ -93,7 +96,7 @@ const Products = () => {
             type="text"
             name="searchProduct"
             id="searchProduct"
-            placeholder="Procurando por algum produto?"
+            placeholder="Looking for some product?"
             className="searchBar"
           />
           <button
@@ -111,10 +114,14 @@ const Products = () => {
             onChange={handleValueChange}
             className="searchBar selectBar"
           >
-            <option value="">Selecione a categoria</option>
+            <option value="">Select category</option>
             {categories?.map((category) => {
               return (
-                <option key={category} value={category}>
+                <option
+                  key={category}
+                  value={category}
+                  style={{ textTransform: "capitalize" }}
+                >
                   {category}
                 </option>
               );
@@ -132,7 +139,11 @@ const Products = () => {
                     image={product.image}
                     altText={product.title}
                     title={product.title}
-                    description={product.price}
+                    description={product.price.toLocaleString("pt-BR", {
+                      minimumFractionDigits: 2,
+                      style: "currency",
+                      currency: "BRL",
+                    })}
                     imgClass="productsCardImg"
                     cardClass="productsCard"
                   />

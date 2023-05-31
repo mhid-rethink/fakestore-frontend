@@ -18,19 +18,19 @@ const Footer = () => {
           </p>
           <ul className="socialMediaContainer">
             <li>
-              <a href="" className="socialMedia">
+              <a href="https://www.facebook.com/" className="socialMedia">
                 {" "}
                 <RiFacebookFill />{" "}
               </a>
             </li>
             <li>
-              <a href="" className="socialMedia">
+              <a href="https://www.instagram.com/" className="socialMedia">
                 {" "}
                 <RiInstagramFill />{" "}
               </a>
             </li>
             <li>
-              <a href="" className="socialMedia">
+              <a href="https://twitter.com/" className="socialMedia">
                 {" "}
                 <RiTwitterFill />{" "}
               </a>

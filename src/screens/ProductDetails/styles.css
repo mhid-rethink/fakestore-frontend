@@ -40,8 +40,11 @@
 .brandAndAvaliation {
   margin: 7px 0 10px;
 }
-
+.ratingCountProductDetails {
+  margin-left: 32px;
+}
 .brandAndAvaliation a {
+  /* margin-left: 32px; */
   color: #0f798d;
   &:hover {
     color: red;

@@ -3,9 +3,11 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 3.6%;
+  flex-wrap: wrap;
+
   background: #c1dcdc;
-  height: 400px;
-  width: 100%;
+  height: clamp(fit-content, 400px, 400px);
+  width: 100vw;
   font-family: "Poppins", sans-serif;
   padding: 3.6% 6.6%;
   font-size: 18px;

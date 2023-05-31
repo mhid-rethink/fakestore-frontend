@@ -1,0 +1,22 @@
+.starRating {
+  position: relative;
+  height: 20px;
+}
+.backStar {
+  color: #ccc;
+  max-width: 100%;
+}
+
+.frontStarContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: 20px;
+}
+
+.frontStar {
+  color: #ffa41c;
+  stroke: #e68320;
+}

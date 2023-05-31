@@ -1,46 +1,91 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { RiPlantLine } from "react-icons/ri";
 import { BsBoxSeam, BsTelephoneOutbound } from "react-icons/bs";
 
-import "./styles.css";
+import { getProducts } from "../../services/products";
+import { getCategories } from "../../services/products";
 
 import Card from "../../components/Card/Card";
 import IconColumn from "../../components/IconColumn/IconColumn";
 
+import "./styles.css";
 const Home = () => {
+  const [bestSellers, setBestSellers] = useState();
+  const [categories, setCategories] = useState();
+
+  const replaceSpecialChar = (text) => {
+    return text
+      .replace(/[ÀÁÂÃÄÅ]/g, "A")
+      .replace(/[àáâãäå]/g, "a")
+      .replace(/[ÈÉÊË]/g, "E")
+      .replace(/[^a-z0-9]/gi, "");
+  };
+
+  useEffect(() => {
+    getProducts()
+      .then((resp) => {
+        let count = 0;
+        const result = resp.filter((product) => {
+          if (
+            count < 3 &&
+            product.rating.rate > 4.5 &&
+            product.rating.count >= 200
+          ) {
+            count++;
+            return true;
+          }
+          return false;
+        });
+        setBestSellers(result);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }, []);
+  useEffect(() => {
+    getCategories()
+      .then((resp) => {
+        setCategories(resp);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }, []);
   return (
     <>
       <div className="bestSelling">
         <div className="bestSellingText">
-          <h2 className="bestSellingTitle">Best Selling Plants</h2>
-          <p className="bestSellingSubtitle">
-            Easiest way to healthy life by buying your favorite plants
-          </p>
-          <button className="bestSellingSeeMore">See more &rarr;</button>
+          <h2 className="bestSellingTitle">Best Selling Items</h2>
+          <p className="bestSellingSubtitle">Hurry before the stock runs out</p>
+          <NavLink>
+            <button className="bestSellingSeeMore">See more &rarr;</button>
+          </NavLink>
         </div>
-        <Card
-          image="https://loremflickr.com/300/363/flower,vase,natural"
-          altText="Um exemplo"
-          title="Natural Plants"
-          description={"R$1,00"}
-        />
-        <Card
-          image="https://loremflickr.com/300/363/flower,bouquet,artificial"
-          altText="Um exemplo"
-          title="Artificial Plants"
-          description={"R$2,00"}
-        />
-        <Card
-          image="https://loremflickr.com/300/363/flower,pot,artificial"
-          altText="Um exemplo"
-          title="Artificial Plants"
-          description={"R$3,00"}
-        />
+        {bestSellers?.map((bestSeller) => {
+          return (
+            <NavLink to={`/products/${bestSeller.id}`} key={bestSeller.id}>
+              <Card
+                key={bestSeller.id}
+                image={bestSeller.image}
+                altText={bestSeller.title}
+                title={bestSeller.title}
+                description={bestSeller.price.toLocaleString("pt-BR", {
+                  minimumFractionDigits: 2,
+                  style: "currency",
+                  currency: "BRL",
+                })}
+                imgClass="bestSellingCardImg"
+                cardClass="bestSellingCard"
+              />
+            </NavLink>
+          );
+        })}
       </div>
       <div className="aboutUs">
         <div className="aboutUsText">
           <h2>About Us </h2>
-          <p>Order now and appreciate the beauty of nature</p>
+          <p>Order now and appreciate</p>
         </div>
         <div className="aboutUsColumnContainer">
           <IconColumn
@@ -69,32 +114,28 @@ const Home = () => {
           <p>Find what you are looking for</p>
         </div>
         <div className="categoriesCardsContainer">
-          <Card
-            image="https://loremflickr.com/300/363/flower,pot,natural"
-            altText="Um exemplo"
-            title="Natural Plants"
-            cardClass="categoriesCard"
-            imgClass="categoriesCardImg"
-          />
-          <Card
-            image="https://loremflickr.com/300/363/plant"
-            altText="Um exemplo"
-            title="Plant Accessories"
-            description="Horem ipsum dolor sit amet, consectetur adipiscing elit."
-            cardClass="categoriesCard"
-            imgClass="categoriesCardImg"
-          />
-          <Card
-            image="https://loremflickr.com/300/363/flower,pot,artificial"
-            altText="Um exemplo"
-            title="Artificial Plants"
-            cardClass="categoriesCard"
-            imgClass="categoriesCardImg"
-          />
+          {categories?.map((category) => {
+            return (
+              <NavLink
+                to={`/products/category/${replaceSpecialChar(category.name)}`}
+                className="categoriesCardLink"
+                key={category.name}
+              >
+                <Card
+                  key={category.name}
+                  image={category.image}
+                  altText={category.name}
+                  title={category.name}
+                  cardClass="categoriesCard"
+                  imgClass="categoriesCardImg"
+                />
+              </NavLink>
+            );
+          })}
         </div>
-        <a href="" target="_self" className="exploreLink">
+        <NavLink to="/products" className="exploreLink">
           Explore &rarr;
-        </a>
+        </NavLink>
       </div>
     </>
   );
