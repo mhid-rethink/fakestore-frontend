@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import {
   getCategories,
@@ -18,10 +18,11 @@ const Products = () => {
   const [categories, setCategories] = useState();
   const [inputText, setInputText] = useState();
 
+  let { categoryParam } = useParams();
+
   useEffect(() => {
     getCategories()
       .then((resp) => {
-        // console.log("resp effect categories", resp);
         setCategories(resp);
       })
       .catch((error) => {
@@ -30,17 +31,27 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-    getProducts()
-      .then((resp) => {
-        setProducts(resp);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }, []);
+    if (categoryParam) {
+      categoryParam = categoryParam.replace("-", " ");
+      getProductsByCategory(categoryParam)
+        .then((resp) => {
+          setProducts(resp);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    } else {
+      getProducts()
+        .then((resp) => {
+          setProducts(resp);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
+  }, [categoryParam]);
 
   const handleValueChange = (event) => {
-    console.log(event.target.value);
 
     if (event.target.value) {
       getProductsByCategory(event.target.value)
@@ -62,7 +73,6 @@ const Products = () => {
   };
 
   const handleInputChange = (event) => {
-    console.log(event.target.value);
     setInputText(event.target.value);
   };
   const handleProductSearchByName = () => {
@@ -118,11 +128,11 @@ const Products = () => {
             {categories?.map((category) => {
               return (
                 <option
-                  key={category}
-                  value={category}
+                  key={category.name}
+                  value={category.name}
                   style={{ textTransform: "capitalize" }}
                 >
-                  {category}
+                  {category.name}
                 </option>
               );
             })}

@@ -14,14 +14,6 @@ const Home = () => {
   const [bestSellers, setBestSellers] = useState();
   const [categories, setCategories] = useState();
 
-  const replaceSpecialChar = (text) => {
-    return text
-      .replace(/[ÀÁÂÃÄÅ]/g, "A")
-      .replace(/[àáâãäå]/g, "a")
-      .replace(/[ÈÉÊË]/g, "E")
-      .replace(/[^a-z0-9]/gi, "");
-  };
-
   useEffect(() => {
     getProducts()
       .then((resp) => {
@@ -117,7 +109,7 @@ const Home = () => {
           {categories?.map((category) => {
             return (
               <NavLink
-                to={`/products/category/${replaceSpecialChar(category.name)}`}
+                to={`/products/category/${category.name.replace(" ", "-")}`}
                 className="categoriesCardLink"
                 key={category.name}
               >

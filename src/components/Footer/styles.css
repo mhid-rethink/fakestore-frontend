@@ -5,11 +5,12 @@
   gap: 3.6%;
   flex-wrap: wrap;
 
-  background: #c1dcdc;
+  max-width: 100%;
   height: clamp(fit-content, 400px, 400px);
-  width: 100vw;
+  padding: 3.6% 5.6%;
+
+  background: #c1dcdc;
   font-family: "Poppins", sans-serif;
-  padding: 3.6% 6.6%;
   font-size: 18px;
 }
 
@@ -23,6 +24,7 @@
 .logoFooter {
   width: 107px;
   height: 29px;
+  flex-wrap: wrap;
 }
 
 .leftFooter p {
