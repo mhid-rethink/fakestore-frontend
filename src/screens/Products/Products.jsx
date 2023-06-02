@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 import {
   getCategories,
@@ -19,6 +19,7 @@ const Products = () => {
   const [inputText, setInputText] = useState();
 
   let { categoryParam } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCategories()
@@ -52,23 +53,14 @@ const Products = () => {
   }, [categoryParam]);
 
   const handleValueChange = (event) => {
-
     if (event.target.value) {
-      getProductsByCategory(event.target.value)
-        .then((resp) => {
-          setProducts(resp);
-        })
-        .catch((error) => {
-          alert(error);
-        });
+      navigate(`/products/category/${event.target.value.replace(" ", "-")}`, {
+        replace: true,
+      });
     } else {
-      getProducts()
-        .then((resp) => {
-          setProducts(resp);
-        })
-        .catch((error) => {
-          alert(error);
-        });
+      navigate(`/products`, {
+        replace: true,
+      });
     }
   };
 
